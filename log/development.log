@@ -231,3 +231,127 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 5922)
 
 
+Started GET "/" for 127.0.0.1 at 2023-09-18 16:40:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.0ms | Allocations: 2175)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-18 16:40:20 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 2.8ms | Allocations: 680)
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3387)
+  Rendered layout layouts/application.html.erb (Duration: 231.3ms | Allocations: 36242)
+Completed 200 OK in 257ms (Views: 242.3ms | ActiveRecord: 0.5ms | Allocations: 44549)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-18 16:40:25 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 219)
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 140)
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2028)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4243)
+Completed 200 OK in 27ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 5323)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-18 16:40:40 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jaraaxai@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jaraaxai@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "jaraaxai@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-09-18 21:40:40.723787"], ["updated_at", "2023-09-18 21:40:40.723787"]]
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 315ms (ActiveRecord: 22.0ms | Allocations: 10722)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-18 16:40:40 -0500
+Processing by WelcomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1177)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms | Allocations: 3385)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `destroy_user_session' for #<ActionView::Base:0x0000000000c008>):
+    1: <h1>Welcome#index</h1>
+    2: <p>Find me in app/views/welcome/index.html.erb</p>
+    3: 
+    4: <%= link_to 'Sign out', destroy_user_session, method: :delete %>
+  
+app/views/welcome/index.html.erb:4
+Started GET "/" for 127.0.0.1 at 2023-09-18 16:44:48 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 207)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2669)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 4796)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-09-18 16:44:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for 127.0.0.1 at 2023-09-18 16:49:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for 127.0.0.1 at 2023-09-18 16:49:33 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2637)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4708)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-09-18 16:49:34 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 36ms (ActiveRecord: 0.1ms | Allocations: 8109)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-18 16:49:34 -0500
+Processing by WelcomeController#index as TURBO_STREAM
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-18 16:49:34 -0500
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 554)
+  Rendered /home/myagmar/.rvm/gems/ruby-3.2.2/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2074)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4245)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 5420)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-18 16:49:41 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jaraaxai@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jaraaxai@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 241ms (ActiveRecord: 0.2ms | Allocations: 2889)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-18 16:49:41 -0500
+Processing by WelcomeController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 60)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2219)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 3810)
+
+
