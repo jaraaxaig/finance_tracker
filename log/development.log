@@ -1491,3 +1491,259 @@ Migrating to CreateStocks (20230919035742)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mStock Create (0.4ms)[0m  [1m[32mINSERT INTO "stocks" ("ticker", "name", "last_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticker", "GOOG"], ["name", "Aplhabet"], ["last_price", 1300.0], ["created_at", "2023-09-19 04:01:06.912662"], ["updated_at", "2023-09-19 04:01:06.912662"]]
   [1m[36mTRANSACTION (13.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-18 23:48:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#my_portfolio as HTML
+Completed 401 Unauthorized in 46ms (ActiveRecord: 0.0ms | Allocations: 1103)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-18 23:48:19 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 662)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 36.8ms | Allocations: 2318)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 135)
+  Rendered layouts/_messages.html.erb (Duration: 2.1ms | Allocations: 216)
+  Rendered layout layouts/application.html.erb (Duration: 165.2ms | Allocations: 24604)
+Completed 200 OK in 290ms (Views: 183.2ms | ActiveRecord: 0.0ms | Allocations: 27981)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-18 23:48:36 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"miigaalam@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "miigaalam@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 134ms (ActiveRecord: 0.3ms | Allocations: 3250)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"miigaalam@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1246)
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 7144)
+Completed 200 OK in 322ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 8189)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-18 23:48:43 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jaraaxai@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jaraaxai@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/my_portfolio
+Completed 303 See Other in 291ms (ActiveRecord: 0.1ms | Allocations: 2868)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-18 23:48:43 -0500
+Processing by UsersController#my_portfolio as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 6111)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 8165)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-19 20:59:03 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms | Allocations: 2468)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-19 20:59:03 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.8ms | Allocations: 820)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 18.8ms | Allocations: 3760)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 140)
+  Rendered layouts/_messages.html.erb (Duration: 2.1ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 351.4ms | Allocations: 55456)
+Completed 200 OK in 369ms (Views: 358.6ms | ActiveRecord: 1.6ms | Allocations: 64065)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 20:59:40 -0500
+Processing by UsersController#my_portfolio as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 300)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-19 20:59:40 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 167)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1250)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 7083)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 7724)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-19 20:59:47 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"jaraaxai@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jaraaxai@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/my_portfolio
+Completed 303 See Other in 246ms (ActiveRecord: 1.5ms | Allocations: 5500)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 20:59:47 -0500
+Processing by UsersController#my_portfolio as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 1.8ms | Allocations: 106)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6113)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.1ms | Allocations: 8179)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:06:20 -0500
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1392)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1481)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms | Allocations: 6704)
+
+
+  
+ActionView::Template::Error (undefined method `fa_icon' for #<ActionView::Base:0x00000000012728>):
+     9:       </div>
+    10:       <div class="col-sm-3 no-left-padding">
+    11:         <%= button_tag type: :submit, class: "btn btn-success" do %>
+    12:           <%= fa_icon 'search 2x' %>
+    13:         <% end %>
+    14:       </div>
+    15:     </div>
+  
+app/views/users/my_portfolio.html.erb:12
+app/views/users/my_portfolio.html.erb:11
+app/views/users/my_portfolio.html.erb:5
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:12:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.8ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8895)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms | Allocations: 23095)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /home/myagmar/code/finance_tracker/app/assets/config
+  /home/myagmar/code/finance_tracker/app/assets/images
+  /home/myagmar/code/finance_tracker/app/assets/stylesheets
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/font-awesome-rails-4.7.0.8/app/assets/fonts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/font-awesome-rails-4.7.0.8/app/assets/stylesheets
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/stimulus-rails-1.2.2/app/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/turbo-rails-1.4.0/app/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/importmap-rails-1.2.1/app/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/assets/stylesheets
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/actioncable-7.0.8/app/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/activestorage-7.0.8/app/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/actionview-7.0.8/lib/assets/compiled
+  /home/myagmar/code/finance_tracker/app/javascript
+  /home/myagmar/code/finance_tracker/vendor/javascript
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/popper_js-2.11.8/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/bootstrap-5.3.1/assets/stylesheets
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/bootstrap-5.3.1/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/bootstrap-5.3.1/assets/stylesheets
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/bootstrap-5.3.1/assets/javascripts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/bootstrap-5.3.1/assets/fonts
+  /home/myagmar/.rvm/gems/ruby-3.2.2/gems/bootstrap-5.3.1/assets/images):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_importmap_tags %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/application.css:13
+app/views/layouts/application.html.erb:9
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:13:11 -0500
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 224)
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 144)
+  Rendered layouts/_messages.html.erb (Duration: 1.1ms | Allocations: 236)
+  Rendered layout layouts/application.html.erb (Duration: 5134.5ms | Allocations: 232126)
+Completed 200 OK in 5137ms (Views: 5135.3ms | ActiveRecord: 0.1ms | Allocations: 233744)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:14:57 -0500
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.3ms | Allocations: 224)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 7037)
+Completed 200 OK in 18ms (Views: 9.5ms | ActiveRecord: 6.4ms | Allocations: 8582)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:14:58 -0500
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 224)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 7029)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.1ms | Allocations: 8567)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:15:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 1.3ms | Allocations: 839)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 148)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 237)
+  Rendered layout layouts/application.html.erb (Duration: 228.7ms | Allocations: 58985)
+Completed 200 OK in 278ms (Views: 232.1ms | ActiveRecord: 1.1ms | Allocations: 73236)
+
+
+Started GET "/my_portfolio" for 127.0.0.1 at 2023-09-19 21:18:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#my_portfolio as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 15.6ms | Allocations: 839)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 150)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 236)
+  Rendered layout layouts/application.html.erb (Duration: 4028.0ms | Allocations: 109903)
+Completed 200 OK in 4054ms (Views: 4030.3ms | ActiveRecord: 1.5ms | Allocations: 124151)
+
+
+Started GET "/my_portfolio?stock=MSFT&button=" for 127.0.0.1 at 2023-09-19 21:19:15 -0500
+Processing by UsersController#my_portfolio as HTML
+  Parameters: {"stock"=>"MSFT", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/my_portfolio.html.erb within layouts/application
+  Rendered users/my_portfolio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 231)
+  Rendered layouts/_navigation.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_messages.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 7038)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 8603)
+
+
